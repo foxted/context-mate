@@ -232,8 +232,13 @@ export function DashboardClient({ apiBase }: { apiBase?: string }) {
           <span className="text-[var(--accent)]">context pressure</span>
         </h1>
         <p className="max-w-prose text-[var(--muted)]">
-          Cursor token counts are estimated (snapshot bytes ÷ 4).{" "}
-          Claude Code and Codex report real token counts.
+          Review how context built up across agents and projects—then adjust your
+          strategy in future conversations. Read-only local data; nothing is
+          uploaded by default.
+        </p>
+        <p className="max-w-prose text-sm text-[var(--muted)]">
+          Cursor token counts are estimated (snapshot bytes ÷ 4). Claude Code
+          and Codex report real token counts.
         </p>
         <div className="flex flex-wrap gap-3 pt-2">
           <button

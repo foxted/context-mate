@@ -2,10 +2,29 @@
   "name": "context-mate",
   "version": "0.1.0",
   "private": true,
-  "description": "Local web dashboard for Cursor / Claude Code / Codex context pressure (snapshots, transcripts, SQLite).",
+  "description": "Local dashboard to review how context pressure played out across Cursor, Claude Code, and Codex (read-only)—so you can adjust your strategy in future conversations.",
+  "keywords": [
+    "ai",
+    "claude-code",
+    "codex",
+    "context",
+    "cursor",
+    "cursor-ide",
+    "developer-tools",
+    "local-first",
+    "nextjs"
+  ],
+  "homepage": "https://github.com/foxted/context-mate#readme",
+  "bugs": {
+    "url": "https://github.com/foxted/context-mate/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foxted/context-mate.git"
+  },
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start"
   },
   "engines": {

@@ -2,7 +2,7 @@
 
 ## Problem
 
-Staying efficient with **context** across AI coding agents is difficult. Cursor, Claude Code, and Codex each hint at pressure differently (bars, limits, token counts), but developers rarely get a clear picture of **what** made a request heavy, which agent is the biggest culprit, or how their habits drift over time. Attachment creep (folders, rules, summarized threads, knowledge items, web refs, large `gitStatusRaw` blobs) is easy to accumulate and hard to audit.
+Staying intentional about **context** across AI coding agents is difficult. Cursor, Claude Code, and Codex each hint at pressure differently (bars, limits, token counts), but developers rarely get a **single, comparable history** of what made work heavy, which agent or project drove it, or how patterns shifted over time. Attachment creep (folders, rules, summarized threads, knowledge items, web refs, large `gitStatusRaw` blobs) is easy to accumulate and hard to **look back on** in one place—so it is hard to refine your strategy for the next session.
 
 ## Thesis
 
@@ -12,19 +12,19 @@ Each agent leaves a local trace of what it sent to the model:
 - **Claude Code** writes JSONL transcripts under `~/.claude/projects/**/*.jsonl` that include real token usage per turn.
 - **Codex** stores conversation data in a local SQLite database.
 
-**Insight:** if we read and normalize all three stores **locally**, we can turn context discipline from vibes into something you can **see, compare, and improve** — across every agent you use.
+**Insight:** if we read and normalize all three stores **locally**, you get a grounded view of **how context use actually played out**—across agents and projects—so reflection is based on evidence, not guessing what “felt” heavy last week.
 
 ## Product north star
 
-Build an **offline-first context pressure dashboard** for developers who use AI coding agents and care about:
+Build an **offline-first context pressure dashboard** for developers who use AI coding agents and want to **learn from past usage**:
 
-- **Lean prompts:** fewer accidental megabyte-class attachments.
+- **Historical clarity:** see **which buckets** dominated (e.g. `knowledgeItems`, `webReferences`, `gitStatusRaw`, `attachedFoldersListDirResults`, `summarizedComposers`) so your next approach is informed, not improvised.
 - **Privacy:** no upload of chat content to a third party by default; read-only inspection of local files and SQLite.
-- **Actionability:** not only totals, but cues about **which buckets** grew (e.g. `knowledgeItems`, `webReferences`, `gitStatusRaw`, `attachedFoldersListDirResults`, `summarizedComposers`).
-- **Cross-agent view:** projects and conversations unified across Cursor, Claude Code, and Codex so you can spot which tool is eating the most context.
+- **Cross-agent view:** projects and conversations unified across Cursor, Claude Code, and Codex so you can compare how context showed up per tool—not just in the moment, but as a record you can revisit.
+- **Look back, then adjust:** the goal is not to optimize every prompt as you type, but to **notice patterns** and refine how you attach rules, folders, and background state in **future** sessions.
 - **Habit feedback:** trends over time once we add session/date correlation (v1 is snapshot analytics; evolution is a natural v2).
 
-Tagline in one line: **Know what you fed the model, before the model bill reminds you.**
+Tagline in one line: **See how context built up—then choose what to change next time.**
 
 ## Principles
 
@@ -41,9 +41,9 @@ Tagline in one line: **Know what you fed the model, before the model bill remind
 
 - Time series and "heavy context events" summaries (if stable timestamps or key patterns allow).
 - Diffs between two exported reports ("what changed week over week").
-- Optional editor hook or pre-send linter that reuses the same shape heuristics (higher integration cost).
+- Optional editor hook or pre-send linter that reuses the same shape heuristics (higher integration cost; **optional**—the core value stays historical insight and comparison, not live gatekeeping).
 - Team mode: aggregated, **fully redacted** metrics only, never raw payloads by default.
 
 ## Success
 
-We succeed if regular users catch **preventable context bloat** early, tighten their workflow, and treat context like any other scarce dev resource: **measured, budgeted, and improved on purpose.**
+We succeed if regular users can **look back** at how context accumulated across agents and projects, **name** what drove the heaviest loads, and **adjust their strategy** in later sessions—with context treated as something you **observe and refine over time**, not only something you react to before the next reply.

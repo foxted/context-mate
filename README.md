@@ -1,6 +1,6 @@
 # context-mate
 
-Local web dashboard that tracks **context pressure** across your AI coding agents — Cursor, Claude Code, and Codex — so you can spot bloated conversations and trim them before they hurt response quality.
+Local web dashboard that tracks **context pressure** across your AI coding agents — Cursor, Claude Code, and Codex — so you can review how context use has played out over time and adjust your strategy in future conversations.
 
 ![Cross-agent context pressure dashboard](public/screenshot.png)
 
@@ -56,6 +56,10 @@ pnpm start
 - Cursor's schema is **undocumented** and may change between releases.
 - Cursor rows measure **serialized snapshot size** (bytes), not token counts. Claude Code and Codex use token-ish fields from transcripts or SQLite — not directly comparable.
 - Read Cursor's DB while Cursor is **idle** so the WAL is checkpointed, or copy `state.vscdb*` and pass `db=` to point at the copy.
+
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## License
 
