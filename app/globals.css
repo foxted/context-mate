@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0b1020;
+  --panel: #121a31;
+  --border: #243055;
+  --text: #e8ecfb;
+  --muted: #8b93b8;
+  --accent: #6ee7b7;
+  --accent2: #7dd3fc;
+}
+
+body {
+  @apply bg-[var(--bg)] text-[var(--text)] antialiased;
+}
