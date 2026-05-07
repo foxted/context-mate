@@ -2,6 +2,8 @@
 
 Local web dashboard that tracks **context pressure** across your AI coding agents — Cursor, Claude Code, and Codex — so you can spot bloated conversations and trim them before they hurt response quality.
 
+![Cross-agent context pressure dashboard](public/screenshot.png)
+
 ## What it does
 
 - **Cursor** — reads `state.vscdb` (`cursorDiskKV → messageRequestContext:*`), shows each composer's snapshot size broken down into buckets (`webReferences`, `diffsSinceLastApply`, `projectLayouts`, `knowledgeItems`, etc.) with cause tags (user-attached vs auto-injected vs mixed)
